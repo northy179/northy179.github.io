@@ -35,7 +35,7 @@
                 <th>Character</th>
                 <th>Key Level</th>
                 <th>Dungeon</th>
-                <th>Last Updated</th>
+                <th>Last Updated (hours since reset)</th>
             </tr>
         </thead>
         <tbody id="luaTableBody">
@@ -95,7 +95,7 @@
                 var keyLevel = match[1];
                 var playerid = match[2];
                 var dungeonname = dungeons[match[3].toString()];
-                var updateDate = match[4];
+                var updateDate = (match[4]/60/60).toFixed(2);
 
                 var newRow = tableBody.insertRow();
                 var cell1 = newRow.insertCell(0);
