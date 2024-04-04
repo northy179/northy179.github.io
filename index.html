@@ -59,12 +59,31 @@
         function parseLuaData(luaData) {
 
             //Debug
-            console.log("Lua Data:", luaData);
+            //console.log("Lua Data:", luaData);
 
             // Assuming Lua data is in the format specified
             // Extracting relevant fields from each entry
             // var regex = /"unit"\s*] =\s*"([^"]*)",/g;
             //var regex = /"key_level"] =\s*([^ ,]*)|"unit"\s*] =\s*"([^"]*)"|"dungeon_id"] =\s*([^ ,]*)/g;
+
+            var dungeons = {
+                "399": "Ruby Life Pools",
+                "400": "The Nokhud Offensive",
+                "401": "The Azure Vault",
+                "402": "Algeth'ar Academy",
+                "403": "Uldaman: Legacy of Tyr",
+                "404": "Neltharus",
+                "405": "Brackenhide Hollow",
+                "406": "Halls of Infusion",
+                "463": "DotI: Galakrond's Fall",
+                "464": "DotI: Murozond's Rise",
+                "244": "Atal'Dazar",
+                "248": "Waycrest Manor",
+                "198": "Darkheart Thicket",
+                "199": "Black Rook Hold",
+                "168": "The Everbloom",
+                "456": "Throne of the Tides"
+            };
             
             var regex = /"key_level"] =\s*([^ ,]*),\s*.*"unit"\s*] =\s*"([^"]*)",\s*.*"dungeon_id"] =\s*([^ ,]*)/g;
             var match;
@@ -74,7 +93,7 @@
             while ((match = regex.exec(luaData)) !== null) {
                 var unit = match[1];
                 var playerClass = match[2];
-                var keyLevel = match[3];
+                var keyLevel = dungeons[match[3].toString()];
 
                 //console.log("Matched Unit:", match[1]);
                 //console.log("Matched Class:", match[2]);
