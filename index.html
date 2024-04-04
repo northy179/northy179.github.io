@@ -56,6 +56,11 @@
             };
 
             reader.readAsText(file);
+
+            //Save path
+            //var filePath = document.getElementById("luaFileInput").value;
+            //localStorage.setItem("filePath", filePath);
+            //console.log("Saved: ", filePath)
         });
 
         // Function to parse Lua data and display it in a table
@@ -104,6 +109,19 @@
                 cell4.innerHTML = updateDate;
             }
         }
+
+        // Function to retrieve and automatically load file path
+        //function retrieveAndLoadFilePath() {
+        //    var filePath = localStorage.getItem("filePath");
+        //    if (filePath) {
+        //        document.getElementById("luaFileInput").value = filePath;
+        //    }
+        //    console.log("Loaded: ", filePath)
+        //}
+
+        // Call the function to automatically load file path when the page loads
+        //retrieveAndLoadFilePath();
+
     </script>
 </body>
 </html>
