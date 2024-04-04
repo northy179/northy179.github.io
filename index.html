@@ -23,7 +23,7 @@
     </header>
     <div class="container">
 
-    <p><b>Find your Astral Keys file:</b> ..\World of Warcraft\_retail_\WTF\Account\<b><i>%Account Name%</i></b>\SavedVariables\AstralKeys.lua</p>
+    <p><b>Find your Astral Keys file:</b><br> ..\World of Warcraft\_retail_\WTF\Account\<b><i>%Account Name%</i></b>\SavedVariables\AstralKeys.lua</p>
 
     <!-- File input element for users to submit a Lua file -->
     <input type="file" id="luaFileInput" accept=".lua"><br><br>
@@ -65,7 +65,8 @@
             // Extracting relevant fields from each entry
             // var regex = /"unit"\s*] =\s*"([^"]*)",/g;
             //var regex = /"key_level"] =\s*([^ ,]*)|"unit"\s*] =\s*"([^"]*)"|"dungeon_id"] =\s*([^ ,]*)/g;
-            var regex = /"key_level"] =\s*([^ ,]*),\s.*"unit"\s*] =\s*"([^"]*)",\s.*"dungeon_id"] =\s*([^ ,]*)/g;
+            
+            var regex = /"key_level"] =\s*([^ ,]*),\s*.*"unit"\s*] =\s*"([^"]*)",\s*.*"dungeon_id"] =\s*([^ ,]*)/g;
             var match;
             var tableBody = document.getElementById("luaTableBody");
             tableBody.innerHTML = ''; // Clear previous data
